@@ -19,26 +19,22 @@ let rec run_game v =
  *@return: array where each entry is the value paid to a player
  * in the St. Petersburg Casino game
  *)
-let rec game_samples n =
-  if n <= 0 then [| |] else
-    let arr = (Array.create n 0.) in
-    Array.map ~f:(run_game) arr;
-    arr
-;;
+let rec game_samples n lst =
+match n with
+  | 0 -> lst
+  | k -> game_samples (k-1) ((run_game 0.)::lst)
+ ;;
 
-let fadd a b = 
-  a +. b;;
 
-let sample_mean arr =
-  let tot = Array.fold_right ~f:fadd arr ~init:0. in
-  tot /. (Float.of_int (Array.length arr))
+let sample_mean lst = 
+  let sum = List.fold_left ~f:(+.) ~init:0. lst in
+  sum /. (float_of_int (List.length lst))
 ;;
 
 let petersburg_paradox trials =
 (*  let trialArr = Array.make trials 0. in*)
-  let arr = game_samples trials in
-  let mu = sample_mean arr in
-  mu
+  let lst = game_samples trials [] in
+  sample_mean lst
 ;;
 
 let numTrials = 100;;
