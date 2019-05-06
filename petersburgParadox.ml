@@ -1,4 +1,6 @@
-open Core
+open Core.List
+open Core.Container
+open Core.Random
 open Printf
 
 
@@ -27,7 +29,7 @@ match n with
 
 
 let sample_mean lst = 
-  let sum = List.fold_left ~f:(+.) ~init:0. lst in
+  let sum = List.fold_left ~f:(+.) ~init:(0.) lst in
   sum /. (float_of_int (List.length lst))
 ;;
 
