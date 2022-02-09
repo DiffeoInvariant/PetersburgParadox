@@ -6,7 +6,7 @@ open Printf
 
 
 (*
- *@author: Zane Jakobs
+ *@author: Emily Jakobs
  *@param value: the current amount the player has won
  *@return: result of playing the St. Petersburg Casino game
  *)
@@ -16,7 +16,7 @@ let rec run_game v =
 ;;
 
 (*
- *@author: Zane Jakobs
+ *@author: Emily Jakobs
  *@param n: number of samples
  *@return: array where each entry is the value paid to a player
  * in the St. Petersburg Casino game
