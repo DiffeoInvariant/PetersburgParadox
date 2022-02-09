@@ -6,7 +6,7 @@
 using namespace std;
 
 int main(){
-	/* Author: Zane Jakobs
+	/* Author: Emily Jakobs
 		Goal: illustrate the Petersburg paradox: If a gambler plays a game in which a coin is
 		flipped until it lands on heads, with the gambler getting 2^n dollars, with n the number of 
 		flips needed to get the heads, then the expected winnings doesn't converge.
